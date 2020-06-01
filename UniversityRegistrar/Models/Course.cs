@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace UniversityRegistrar.Models
 {
@@ -11,6 +12,7 @@ namespace UniversityRegistrar.Models
 
     public int CourseId { get; set; }
     public string Name { get; set; }
+
     public ICollection<CourseStudent> Students { get; set; } // generic interface - collection of method signatures bundled together.
                   // ICollection required by Entity to outline methods for querying and changing data.
                   // <CourseStudent> is a collection navigation property for many to many relationship
