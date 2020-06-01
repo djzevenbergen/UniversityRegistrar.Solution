@@ -1,0 +1,21 @@
+@using UniversityRegistrar.Models;
+<img src='~/img/UR-Header.JPG' alt="University Registrar" margin="0 auto" height="auto" width="100%" style="border: 5px double green">
+  <br>
+  <br>
+  <div id="navBar">
+  <form action="/search" method="get">
+  @* @Html.DropDownList("search",
+  new SelectList(Enum.GetNames(typeof(CourseName))),
+  "Course Name", new { @class = "form-control"}) *@
+  <label for="search">Search by name or course</label>
+  <input type = "text" name="search">
+  <br>
+  <input type="submit" value="Search" class="btn">
+  </form>
+
+    <ul class="nav nav-tabs animated bounceInDown">
+      <li role="presentation"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/students">Students</a></li>
+      <li role="presentation"><a href="/courses">Courses</a></li>
+    </ul>
+  </div>
