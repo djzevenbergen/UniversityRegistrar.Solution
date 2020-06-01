@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h2>Edit Page</h2>
+<hr />
+<h4>Editing course info for: @Html.DisplayFor(model => model.Name)</h4>
+@Html.ActionLink("I change my mind", "Details", new { id = Model.CourseId })
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CourseId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    <br>
+    <br>
+    <input type="submit" value="Save" class="btn"/>
+}

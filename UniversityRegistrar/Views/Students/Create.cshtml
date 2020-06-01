@@ -9,12 +9,15 @@
   @Html.LabelFor(model => model.FirstName)
   @Html.TextBoxFor(model => model.FirstName)
 
-    @Html.LabelFor(model => model.LastName)
+  @Html.LabelFor(model => model.LastName)
   @Html.TextBoxFor(model => model.LastName)
-
+  <br>
+  @Html.LabelFor(model => model.EnrollDate)
+  @Html.TextBoxFor(model => model.EnrollDate, new { type = "date" })
+  <br>
   @Html.Label("Select Course")
   @Html.DropDownList("CourseId")
-
+  <br>
   <input type="submit" value="Add new student" class="btn"/>
 
 }

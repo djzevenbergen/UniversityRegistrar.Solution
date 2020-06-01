@@ -15,8 +15,11 @@
   @Html.LabelFor(model => model.FirstName)
   @Html.EditorFor(model => model.FirstName)
 
-    @Html.LabelFor(model => model.LastName)
+  @Html.LabelFor(model => model.LastName)
   @Html.EditorFor(model => model.LastName)
+  <br>
+  @Html.LabelFor(model => model.EnrollDate)
+  @Html.EditorFor(model => model.EnrollDate, new { type = "date" })
 
   @Html.Label("Select course")
   @Html.DropDownList("CourseId")

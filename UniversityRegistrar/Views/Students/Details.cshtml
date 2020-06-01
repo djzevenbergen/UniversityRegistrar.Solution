@@ -9,8 +9,10 @@
 
 <hr />
 
-<h3>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)</h3>
 
+<p>First Name: @Model.FirstName</p>
+<p>Last Name: @Model.LastName</p>
+<p>Enroll Date: @Model.EnrollDate.Date</p>
 @if(@Model.Courses.Count == 0)
 {
   <p>This student is not taking any courses</p>
