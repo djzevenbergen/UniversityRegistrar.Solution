@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2>Student Details</h2>
+
+<hr />
+
+<h3>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)</h3>
+
+@if(@Model.Courses.Count == 0)
+{
+  <p>This student is not taking any courses</p>
+}
+else
+{
+  <h4>Courses:</h4>
+  <ul>
+  @foreach(var join in Model.Courses)
+  {
+    <li>@join.Course.Name</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit Student", "Edit", new {id = Model.StudentId})</p>
+<p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId})</p>
+<p>@Html.ActionLink("Add a Course", "AddCourse", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Back to List", "Index")</p>
