@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@using UniversityRegistrar.Models;
+
+<h3>Search Results:</h3>
+<hr />
+
+@foreach(Course Course in Model)
+{
+  <h4>@Html.ActionLink($"{Course.Name}", "Details", "Courses", new {id = Course.CourseId})</h4>
+}

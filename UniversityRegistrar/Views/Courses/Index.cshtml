@@ -10,7 +10,7 @@
   <ul>
     @foreach(Course course in Model)
     {
-      <li>@Html.ActionLink($"{course.Name}", "Details", new { id = course.CourseId })</li>
+      <p>@Html.ActionLink($"{course.Name}", "Details", new { id = course.CourseId })</p>
     }
   </ul>
 

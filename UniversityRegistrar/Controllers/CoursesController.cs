@@ -56,28 +56,26 @@ namespace UniversityRegistrar.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    // [HttpGet("/search")]
-    // public ActionResult Search(string search)
-    // {
-    //   List<Course> model = _db.Courses.Include(courses => courses.Students).ToList();
-    //   List<Student> studentModel = _db.Students.Include(students => students.Students).ToList();
+    [HttpGet("/search")]
+    public ActionResult Search(string search)
+    {
+      List<Course> model = _db.Courses.Include(courses => courses.Students).ToList();
+      // List<Student> studentModel = _db.Students.Include(students => students.Students).ToList();
 
-    //   Student studentMatch = new Student();
-    //   Course match = new Course();
-
-    //   if (!string.IsNullOrEmpty(search))
-    //   {
-    //    foreach(Course course in model)
-    //    {
-    //      if (course.Name == search)
-    //      {
-    //        match = course;
-    //      }
-    //    } 
-    //   }
-
-    //   List<CourseStudent> matches = match.Students.ToList();
-    //   return View(matches);
-    // }
+      // Student studentMatch = new Student();
+      Course match = new Course();
+      List<Course> matches = new List<Course>{};
+      if (!string.IsNullOrEmpty(search))
+      {
+       foreach(Course course in model)
+       {
+         if (course.Name.ToLower().Contains(search))
+         {
+           matches.Add(course);
+         }
+       } 
+      }
+      return View(matches);
+    }
   }
 }
